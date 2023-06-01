@@ -1,4 +1,4 @@
---Created a Coffee Shop Database
+--Create a Coffee Shop Database
 
 CREATE TABLE Store_Inventory (id INTEGER PRIMARY KEY, coffee_type TEXT, price INTEGER, storage_location_number INTEGER, storage_letter TEXT, rating INTEGER);
 
