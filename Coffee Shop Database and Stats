@@ -1,0 +1,43 @@
+--Created a Coffee Shop Database
+
+CREATE TABLE Store_Inventory (id INTEGER PRIMARY KEY, coffee_type TEXT, price INTEGER, storage_location_number INTEGER, storage_letter TEXT, rating INTEGER);
+
+INSERT INTO 
+Store_Inventory 
+
+VALUES 
+(1, "Mean Bean", 1.50, 2, "A", 10),
+(2, "German Chocalate", 1.50, 4, "A", 6),
+(3, "Kahuna", 2, 2, "B", 3),
+(4, "Killer Queen", 2, 5, "C", 8),
+(5, "Matcha Twist", 3.50, 6, "C", 10),
+(6, "Sloth Craze", 3.50, 3, "C", 7),
+(7, "Mocha Smack", 2.50, 4, "B", 5),
+(8, "Coconut Cream", 2.50, 3, "A", 5),
+(9, "Cat's Beans", 3.50, 4, "D", 7),
+(10, "Lover's Punch", 2, 5, "A", 7),
+(11, "Peppermint Kiss", 1.50, 3, "A", 3),
+(12, "Lavender Haze", 2.50, 7, "D", 10),
+(13, "Mad Milk Mocha", 1.50, 1, "C", 3),
+(14, "Joe's Cup", 3.50, 5, "B", 3),
+(15, "Bad Bones", 4.00, 9, "D", 9);
+
+--Display database order by price
+
+SELECT * FROM Store_inventory ORDER BY price;
+
+--Display database order by price only including coffee types with a rating of 5 or greater
+
+SELECT * FROM Store_inventory WHERE rating > 5 ORDER BY price;
+
+--Display database order by price only including coffee types with a rating of 5 or greater, but remove all other information from the table
+
+SELECT coffee_type, price, rating FROM Store_inventory WHERE rating > 5 ORDER BY price;
+
+--What coffee types are located in storage bin A?
+
+SELECT coffee_type, storage_letter FROM Store_inventory WHERE storage_letter = 'A';
+
+--How much would it cost for a customer to buy 1 of each coffee type?
+
+SELECT SUM(price) FROM Store_inventory;
